@@ -38,9 +38,23 @@ module.exports = function BaseModule(moduleOptions) {
     })
   }
 
-  // CSS
+  // Normalize CSS
   if (options.addNormalizeCSS !== false) {
     this.options.css.push('normalize.css')
+  }
+
+  // SVG Loader
+  if (options.addSVGLoader !== false) {
+    this.extendBuild((config) => {
+      config.module.rules
+        .find((rule) => rule.loader === 'url-loader')
+        .test = /\.(png|jpg|gif)$/
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+        exclude: /node_modules/
+      })
+    })
   }
 }
 

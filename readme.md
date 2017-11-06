@@ -34,6 +34,7 @@
             },
             addHeadMeta: true,
             addHeadLinks: true,
-            addNormalizeCSS: true
+            addNormalizeCSS: true,
+            addSVGLoader: true
         }
     }
