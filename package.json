@@ -16,5 +16,9 @@
   },
   "bugs": {
     "url": "https://github.com/wagerfield/nuxt-base/issues"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-supermind": "^0.47.0"
   }
 }
