@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
+    "vue-i18n": "^7.3.2",
     "vue-svg-loader": "^0.3.0"
   },
   "devDependencies": {
