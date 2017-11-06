@@ -4,6 +4,9 @@
   "rules": {
     "quote-props": "off"
   },
+  "settings": {
+    "import/core-modules": [ "vue" ]
+  },
   "env": {
     "jest": true
   }
