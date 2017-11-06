@@ -32,6 +32,8 @@
                 'server_error': 'Server error',
                 'back_to_home': 'Back to home page'
             },
+            addHeadMeta: true,
+            addHeadLinks: true,
             addNormalizeCSS: true
         }
     }

@@ -19,6 +19,25 @@ module.exports = function BaseModule(moduleOptions) {
     }, options.router)
   }
 
+  // Head Meta
+  if (options.addHeadMeta !== false) {
+    this.options.head.meta.unshift({
+      charset: 'utf-8'
+    }, {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, user-scalable=no'
+    })
+  }
+
+  // Head Links
+  if (options.addHeadLinks !== false) {
+    this.options.head.link.unshift({
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    })
+  }
+
   // CSS
   if (options.addNormalizeCSS !== false) {
     this.options.css.push('normalize.css')
