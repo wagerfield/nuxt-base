@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "^4.10.0",
-    "eslint-config-supermind": "^0.47.0"
+    "eslint-config-supermind": "^0.47.0",
+    "husky": "^0.14.3"
   }
 }
