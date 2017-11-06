@@ -1,3 +1,5 @@
+const path = require('path')
+
 // https://nuxtjs.org/api/internals-module-container
 module.exports = function BaseModule(moduleOptions) {
   const options = Object.assign({}, this.options.base, moduleOptions)
@@ -19,8 +21,8 @@ module.exports = function BaseModule(moduleOptions) {
     }, options.router)
   }
 
-  // Head Meta
-  if (options.addHeadMeta !== false) {
+  // Head Meta Tags
+  if (options.addHeadMetaTags !== false) {
     this.options.head.meta.unshift({
       charset: 'utf-8'
     }, {
@@ -29,8 +31,8 @@ module.exports = function BaseModule(moduleOptions) {
     })
   }
 
-  // Head Links
-  if (options.addHeadLinks !== false) {
+  // Head Link Tags
+  if (options.addHeadLinkTags !== false) {
     this.options.head.link.unshift({
       rel: 'icon',
       type: 'image/x-icon',
@@ -55,6 +57,12 @@ module.exports = function BaseModule(moduleOptions) {
         exclude: /node_modules/
       })
     })
+  }
+
+  // Vue i18n
+  if (options.addI18n !== false) {
+    this.addVendor('vue-i18n')
+    this.addPlugin(path.resolve(__dirname, 'i18n.js'))
   }
 }
 

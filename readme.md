@@ -32,9 +32,10 @@
                 'server_error': 'Server error',
                 'back_to_home': 'Back to home page'
             },
-            addHeadMeta: true,
-            addHeadLinks: true,
+            addHeadMetaTags: true,
+            addHeadLinkTags: true,
             addNormalizeCSS: true,
-            addSVGLoader: true
+            addSVGLoader: true,
+            addI18n: true
         }
     }
