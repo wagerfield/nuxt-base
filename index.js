@@ -45,6 +45,12 @@ module.exports = function BaseModule(moduleOptions) {
     this.options.css.push('normalize.css')
   }
 
+  // Vue i18n Plugin
+  if (options.addI18nPlugin !== false) {
+    this.addVendor('vue-i18n')
+    this.addPlugin(path.resolve(__dirname, 'plugins/i18n.js'))
+  }
+
   // SVG Loader
   if (options.addSVGLoader !== false) {
     this.extendBuild((config) => {
@@ -57,12 +63,6 @@ module.exports = function BaseModule(moduleOptions) {
         exclude: /node_modules/
       })
     })
-  }
-
-  // Vue i18n
-  if (options.addI18n !== false) {
-    this.addVendor('vue-i18n')
-    this.addPlugin(path.resolve(__dirname, 'i18n.js'))
   }
 }
 
