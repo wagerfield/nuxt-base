@@ -51,6 +51,11 @@ module.exports = function BaseModule(moduleOptions) {
     this.addPlugin(path.resolve(__dirname, 'plugins/i18n.js'))
   }
 
+  // Constants Plugin
+  if (options.addConstantsPlugin !== false) {
+    this.addPlugin(path.resolve(__dirname, 'plugins/constants.js'))
+  }
+
   // SVG Loader
   if (options.addSVGLoader !== false) {
     this.extendBuild((config) => {
