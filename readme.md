@@ -40,8 +40,9 @@ module.exports = {
         addHeadMetaTags: true,
         addHeadLinkTags: true,
         addNormalizeCSS: true,
-        addSVGLoader: true,
-        addI18n: true
+        addConstantsPlugin: true,
+        addI18nPlugin: true,
+        addSVGLoader: true
     }
 }
 ```
