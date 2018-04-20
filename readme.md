@@ -1,6 +1,6 @@
-# Base Module for Nuxt.js
+# Base Module for Nuxt
 
-Opinionated config defaults for [Nuxt][nuxt].
+Opinionated [Nuxt][nuxt] config defaults.
 
 ## Installation
 
