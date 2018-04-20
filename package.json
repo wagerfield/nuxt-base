@@ -7,6 +7,7 @@
   "license": "MIT",
   "keywords": [
     "nuxt",
+    "base",
     "module"
   ],
   "main": "index.js",
@@ -22,13 +23,12 @@
     "url": "https://github.com/wagerfield/nuxt-base/issues"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0",
-    "vue-i18n": "^7.3.2",
-    "vue-svg-loader": "^0.3.0"
+    "vue-svg-loader": "^0.5.0",
+    "vue-template-compiler": "^2.5.16"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-config-supermind": "^0.47.0",
+    "eslint": "^4.19.1",
+    "eslint-config-supermind": "^0.48.0",
     "husky": "^0.14.3"
   }
 }

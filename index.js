@@ -1,28 +1,33 @@
 const path = require('path')
 
 // https://nuxtjs.org/api/internals-module-container
-module.exports = function BaseModule(moduleOptions) {
-  const options = Object.assign({}, this.options.base, moduleOptions)
+module.exports = function NuxtBase(options) {
+  const opts = Object.assign({}, this.options.base, options)
 
   // Messages
-  if (options.overrideMessages !== false) {
+  if (opts.overrideMessages !== false) {
     Object.assign(this.options.messages, {
       'error_404': 'Page not found',
       'server_error': 'Server error',
       'back_to_home': 'Back to home page'
-    }, options.messages)
+    }, opts.messages)
   }
 
   // Router
-  if (options.overrideRouter !== false) {
+  if (opts.overrideRouter !== false) {
     Object.assign(this.options.router, {
       linkExactActiveClass: 'active-link-exact',
       linkActiveClass: 'active-link'
-    }, options.router)
+    }, opts.router)
+  }
+
+  // Constants Plugin
+  if (opts.addConstantsPlugin !== false) {
+    this.addPlugin(path.resolve(__dirname, 'plugins/constants.js'))
   }
 
   // Head Meta Tags
-  if (options.addHeadMetaTags !== false) {
+  if (opts.addHeadMetaTags !== false) {
     this.options.head.meta.unshift({
       charset: 'utf-8'
     }, {
@@ -32,7 +37,7 @@ module.exports = function BaseModule(moduleOptions) {
   }
 
   // Head Link Tags
-  if (options.addHeadLinkTags !== false) {
+  if (opts.addHeadLinkTags !== false) {
     this.options.head.link.unshift({
       rel: 'icon',
       type: 'image/x-icon',
@@ -40,24 +45,8 @@ module.exports = function BaseModule(moduleOptions) {
     })
   }
 
-  // Normalize CSS
-  if (options.addNormalizeCSS !== false) {
-    this.options.css.push('normalize.css')
-  }
-
-  // Vue i18n Plugin
-  if (options.addI18nPlugin !== false) {
-    this.addVendor('vue-i18n')
-    this.addPlugin(path.resolve(__dirname, 'plugins/i18n.js'))
-  }
-
-  // Constants Plugin
-  if (options.addConstantsPlugin !== false) {
-    this.addPlugin(path.resolve(__dirname, 'plugins/constants.js'))
-  }
-
   // SVG Loader
-  if (options.addSVGLoader !== false) {
+  if (opts.addSVGLoader !== false) {
     this.extendBuild((config) => {
       config.module.rules
         .find((rule) => rule.loader === 'url-loader')
