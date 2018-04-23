@@ -36,15 +36,6 @@ module.exports = function NuxtBase(options) {
     })
   }
 
-  // Head Link Tags
-  if (opts.addHeadLinkTags !== false) {
-    this.options.head.link.unshift({
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    })
-  }
-
   // SVG Loader
   if (opts.addSVGLoader !== false) {
     this.extendBuild((config) => {

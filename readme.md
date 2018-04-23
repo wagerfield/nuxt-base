@@ -42,7 +42,6 @@ module.exports = {
     },
     addConstantsPlugin: true,
     addHeadMetaTags: true,
-    addHeadLinkTags: true,
     addSVGLoader: true
   }
 }
