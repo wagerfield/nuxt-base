@@ -6,8 +6,5 @@
   },
   "settings": {
     "import/core-modules": [ "vue" ]
-  },
-  "env": {
-    "jest": true
   }
 }
