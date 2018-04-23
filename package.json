@@ -1,6 +1,6 @@
 {
   "name": "nuxt-base",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Base module for Nuxt",
   "homepage": "https://github.com/wagerfield/nuxt-base#readme",
   "author": "Matthew Wagerfield <matthew@wagerfield.com>",
