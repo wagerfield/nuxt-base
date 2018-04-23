@@ -29,8 +29,10 @@ module.exports = function NuxtBase(options) {
   // Head Meta Tags
   if (opts.addHeadMetaTags !== false) {
     this.options.head.meta.unshift({
+      once: true,
       charset: 'utf-8'
     }, {
+      once: true,
       name: 'viewport',
       content: 'width=device-width, initial-scale=1, user-scalable=no'
     })
